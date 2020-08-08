@@ -1,4 +1,17 @@
-body
+body {
+  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+  font-family: 'Pangolin', cursive;
+}
+#main_titile
 {
-  background-color: blue;
+  color: #fbd46d
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 500px;
+  border: 2px solid #fbd46d;
+  border-radius: 50px;
+  border-width: medium;
 }
