@@ -18,7 +18,11 @@ app.set('view engine' , 'ejs')
 app.get('/', function (req, res) {
   res.render('index.ejs')
 });
-
+app.post("/" , function(req , resp)
+{
+    console.log("root post method");
+    console.log(req.body.email);
+});
 app.listen(3000,function(req ,resp)
 {
   console.log("your server is listen at 3000 port")
