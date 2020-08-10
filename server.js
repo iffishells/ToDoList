@@ -29,7 +29,12 @@ app.post("/" , function(req , resp)
 
     for (let i = 0; i < member_list.length; i++) {
       console.log("hellow ballah!");
-      console.log(member_list[i]);
+      if (UserName == member_list[i].email && password == member_list[i].password  ) {
+        resp.send("Connected Succcessfully")
+      }
+      else {
+        resp.send("Your Password/Emails are Wrong! ")
+      }
     }
 
 });
