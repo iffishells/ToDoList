@@ -6,7 +6,6 @@ const app = express();
 
 
 const member_list = []
-
 //serving the static file
 
 app.use(express.static(path.join(__dirname , 'public')));
@@ -25,8 +24,14 @@ app.get('/', function (req, res) {
 
 app.post("/" , function(req , resp)
 {
-    console.log("root post method");
-    console.log(req.body);
+    const UserName = req.body.email
+    const password = req.body.password
+
+    for (let i = 0; i < member_list.length; i++) {
+      console.log("hellow ballah!");
+      console.log(member_list[i]);
+    }
+
 });
 
 
