@@ -18,24 +18,25 @@ app.set('views',path.join(__dirname , "views"))
 app.set('view engine' , 'ejs')
 
 app.get('/', function (req, res) {
-  res.render('index.ejs')
+  res.render('profile.ejs')
 });
 
 
 app.post("/" , function(req , resp)
 {
-    const UserName = req.body.email
-    const password = req.body.password
-
-    for (let i = 0; i < member_list.length; i++) {
-      console.log("hellow ballah!");
-      if (UserName == member_list[i].email && password == member_list[i].password  ) {
-        resp.send("Connected Succcessfully")
-      }
-      else {
-        resp.send("Your Password/Emails are Wrong! ")
-      }
-    }
+    // const UserName = req.body.email
+    // const password = req.body.password
+    //
+    // for (let i = 0; i < member_list.length; i++) {
+    //   console.log("hellow ballah!");
+    //   if (UserName == member_list[i].email && password == member_list[i].password  ) {
+    //     resp.send("Connected Succcessfully")
+    //   }
+    //   else {
+    //     resp.send("Your Password/Emails are Wrong! ")
+    //   }
+    // }
+    resp.render("todolist.ejs")
 
 });
 
