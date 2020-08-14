@@ -1,17 +1,46 @@
-body ,top-singup {
-  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
-  font-family: 'Pangolin', cursive;
+body,
+top-singup {
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+    font-family: 'Pangolin', cursive;
 }
-#main_titile
-{
-  color: #fbd46d
+
+#main_titile {
+    color: #fbd46d
 }
+
 .container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    border: 2px solid #fbd46d;
+    border-radius: 50px;
+    border-width: medium;
+}
+
+
+/* Start the Todolist styles */
+
+
+/*
+.todo
+{
+  display: grid;
+  grid-template-columns: auto;
   justify-content: center;
-  height: 500px;
-  border: 2px solid #fbd46d;
-  border-radius: 50px;
-  border-width: medium;
+  height: 800px;
+  align-items: center;
+  border: 1px  solid black;
+} */
+
+.main-content {
+    background-color: white;
+    padding-right: 2rem;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    height: auto;
+    width: auto;
+    align-items: center;
+    border: 1px solid black;
 }

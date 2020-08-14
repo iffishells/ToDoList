@@ -17,28 +17,29 @@ app.use(BodyParser.urlencoded({extended : true}));
 app.set('views',path.join(__dirname , "views"))
 app.set('view engine' , 'ejs')
 
-app.get('/', function (req, res) {
-  res.render('profile.ejs')
-});
+const task_list = []
+// app.get('/', function (req, res) {
+//   res.render('index.ejs')
+// });
 
 
-app.post("/" , function(req , resp)
-{
-    // const UserName = req.body.email
-    // const password = req.body.password
-    //
-    // for (let i = 0; i < member_list.length; i++) {
-    //   console.log("hellow ballah!");
-    //   if (UserName == member_list[i].email && password == member_list[i].password  ) {
-    //     resp.send("Connected Succcessfully")
-    //   }
-    //   else {
-    //     resp.send("Your Password/Emails are Wrong! ")
-    //   }
-    // }
-    resp.render("todolist.ejs")
-
-});
+// app.post("/" , function(req , resp)
+// {
+//     const UserName = req.body.email
+//     const password = req.body.password
+//
+//     for (let i = 0; i < member_list.length; i++) {
+//       console.log("hellow ballah!");
+//       if (UserName == member_list[i].email && password == member_list[i].password  ) {
+//         resp.send("Connected Succcessfully")
+//       }
+//       else {
+//         resp.send("Your Password/Emails are Wrong! ")
+//       }
+//     }
+//     resp.render("todolist.ejs")
+//
+// });
 
 
 app.get('/contact', function (req, res) {
@@ -57,6 +58,19 @@ app.post("/contact" , function(req, resp)
   resp.redirect("/")
 
 });
+
+app.get('/', function (req, res) {
+  res.render("todolist.ejs",{
+    newitem : task_list
+  })
+});
+
+app.post('/', function (req, resp) {
+
+  task_list.push(req.body.set_items)
+  resp.redirect("/")
+});
+
 
 
 app.listen(3000,function(req ,resp)
