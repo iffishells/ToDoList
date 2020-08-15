@@ -27,17 +27,19 @@
         <div class="getting_Task_form_user">
             <form class="main-content" action="/todolist" method="post">
 
-                <ul class="list-group-item">
+                <ul class="un-order_list_tasks">
                     <% for (var i = 0; i < newitem.length; i++) { %>
                         <li id="inside__list">
                             <%= newitem[i] %>
                         </li>
                         <%  } %>
                 </ul>
+
+
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" id="enterdolist" name="set_items" placeholder="Enter ToDoStep" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" id="add_button" type="submit">+ </button>
+                        <button class="btn btn-outline-secondary" id="add_more_task_button" type="submit">+ </button>
                     </div>
                 </div>
 

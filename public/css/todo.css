@@ -19,6 +19,27 @@ body {
     border: 2px solid black;
     border-radius: 10rem;
     justify-content: center;
-    height: 30rem;
+    height: auto;
     background-color: white;
+}
+
+.un-order_list_tasks {
+    list-style-type: circle;
+    height: auto;
+    width: 40rem;
+    border-radius: 20rem;
+    color: black;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+#enterdolist {
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    border-radius: 20rem;
+}
+
+#add_more_task_button {
+    border-radius: 10rem;
 }
