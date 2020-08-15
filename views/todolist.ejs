@@ -18,14 +18,18 @@
     </div>
 
 
-    <div class="outer-todo">
+    <div class="main-block-A">
+        <div class="Title_inside_block_A">
+            <h2>Add Task</h2>
+        </div>
 
-        <div class="container-todo">
+
+        <div class="getting_Task_form_user">
             <form class="main-content" action="/todolist" method="post">
 
-                <ul id="circle">
+                <ul class="list-group-item">
                     <% for (var i = 0; i < newitem.length; i++) { %>
-                        <li class="list-group-item list-group-item-primary" id="inside__list">
+                        <li id="inside__list">
                             <%= newitem[i] %>
                         </li>
                         <%  } %>
@@ -33,17 +37,17 @@
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" id="enterdolist" name="set_items" placeholder="Enter ToDoStep" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <div class="input-group-append">
-                        <i class="fas fa-calendar input-prefix" tabindex=0></i>
-                        <button class="btn btn-outline-secondary" id="add_button" type="submit">ADD</button>
+                        <button class="btn btn-outline-secondary" id="add_button" type="submit">+ </button>
                     </div>
                 </div>
 
             </form>
 
-
         </div>
 
     </div>
+    <!-- <img id="image-plus-size" src="/images/plus.png" alt=""> -->
+
 
 
 
