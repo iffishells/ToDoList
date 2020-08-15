@@ -3,6 +3,12 @@ body {
     font-family: 'Pangolin', cursive;
 }
 
+#circle {
+    list-style-type: circle;
+    color: black;
+    list-style-type: circle;
+}
+
 .container-todo {
     background-color: white;
     display: grid;

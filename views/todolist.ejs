@@ -23,27 +23,49 @@
         <div class="container-todo">
             <form class="main-content" action="/todolist" method="post">
 
-                <!-- <ul> -->
-                <% for (var i = 0; i < newitem.length; i++) { %>
-                    <li class="list-group-item" id="inside__list">
-                        <%= newitem[i] %>
-                    </li>
-                    <%  } %>
-                        <!-- </ul> -->
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="enterdolist" name="set_items" placeholder="Enter ToDoStep" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="far fa-calender-alt">Date</button>
-                                <button class="btn btn-outline-secondary" id="add_button" type="submit">ADD</button>
-                            </div>
-                        </div>
+                <ul id="circle">
+                    <% for (var i = 0; i < newitem.length; i++) { %>
+                        <li class="list-group-item list-group-item-primary" id="inside__list">
+                            <%= newitem[i] %>
+                        </li>
+                        <%  } %>
+                </ul>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="enterdolist" name="set_items" placeholder="Enter ToDoStep" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                        <button class="btn btn-outline-secondary" id="add_button" type="submit">ADD</button>
+                    </div>
+                </div>
 
             </form>
 
+
         </div>
+
     </div>
 
-    <script src="/javascript/home.js" type="text/javascript">
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/"> iffishells.wordpress.com/a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+    
+    </script>
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
