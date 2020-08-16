@@ -40,13 +40,12 @@ app.post("/", function(req, resp) {
     const password = req.body.password
 
     for (let i = 0; i < member_list.length; i++) {
-        console.log("hellow ballah!");
+        S
         if (UserName === member_list[i].email && password === member_list[i].password) {
             console.log("in checking password ... ....");
             resp.redirect("/todolist")
 
         } else {
-            console.log("Your aren't registered")
             resp.render("/")
         }
     }
@@ -77,7 +76,7 @@ app.post("/contact", function(req, resp) {
 
 
 app.get('/todolist', function(req, res) {
-    console.log("todolist get has been called")
+    // console.log("todolist get has been called")
     res.render("todolist", {
         newitem: adding_task_list
     });
@@ -86,12 +85,17 @@ app.get('/todolist', function(req, res) {
 });
 
 app.post('/todolist', function(req, resp) {
-    console.log("todolist post has been called")
+    // console.log("todolist post has been called")
     adding_task_list.push(req.body.set_items)
+
+    console.log(req.body);
     resp.redirect("/todolist")
+
 });
 
-
+app.post("/submit", function(req, resp) {
+    console.log("submit button");
+})
 
 app.listen(3000, function(req, resp) {
     console.log("your server is listen at 3000 port")

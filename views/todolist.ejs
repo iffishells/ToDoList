@@ -20,11 +20,11 @@
 
     <div class="main-block-A">
         <div class="Title_inside_block_A">
-            <h2>Add Task</h2>
+            <h2>Add Tasks</h2>
         </div>
 
+        <div class="getteing_Task_form_user">
 
-        <div class="getting_Task_form_user">
             <form class="main-content" action="/todolist" method="post">
 
                 <ul class="un-order_list_tasks">
@@ -37,16 +37,23 @@
 
 
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="enterdolist" name="set_items" placeholder="Enter ToDoStep" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control" id="enterdolist" name="set_items" value="add_button" placeholder="Enter ToDoStep" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" id="add_more_task_button" type="submit">+ </button>
+                        <button class="btn btn-outline-secondary" id="add_more_task_button" name="add" value="submit_button" type="submit">+</button>
                     </div>
                 </div>
+                <button type="submit" name="submit" formaction="/submit" class="form-control btn-primary submit_tasks">Submit</button>
 
             </form>
 
         </div>
 
+    </div>
+
+    <div class="submittied_task_today">
+        <div class="showing_task">
+
+        </div>
     </div>
     <!-- <img id="image-plus-size" src="/images/plus.png" alt=""> -->
 

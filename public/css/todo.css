@@ -15,12 +15,13 @@ body {
 .main-block-A {
     padding-top: 10px;
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
     border: 2px solid black;
     border-radius: 10rem;
     justify-content: center;
     height: auto;
     background-color: white;
+    column-gap: 10rem;
 }
 
 .un-order_list_tasks {
@@ -42,4 +43,13 @@ body {
 
 #add_more_task_button {
     border-radius: 10rem;
+    padding-bottom: 10px;
+}
+
+.submit_tasks {
+    border-radius: 10rem;
+}
+
+.getteing_Task_form_user {
+    padding-bottom: 1rem;
 }
