@@ -1,55 +1,77 @@
-body {
-    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
-    font-family: 'Pangolin', cursive;
-    color: #fbd46d;
-}
-
-#main_titile {
-    display: grid;
-    justify-content: center;
-    color: #fbd46d;
-    align-content: center;
-    font-size: 10rem;
-}
-
-.main-block-A {
-    padding-top: 10px;
-    display: grid;
-    grid-template-columns: auto auto;
-    border: 2px solid black;
-    border-radius: 10rem;
-    justify-content: center;
-    height: auto;
-    background-color: white;
-    column-gap: 10rem;
-}
-
-.un-order_list_tasks {
-    list-style-type: circle;
-    height: auto;
-    width: 40rem;
-    border-radius: 20rem;
-    color: black;
-    font-size: 2rem;
-    padding-bottom: 2rem;
-}
-
-#enterdolist {
-    background-color: black;
-    color: white;
-    font-size: 2rem;
-    border-radius: 20rem;
-}
-
-#add_more_task_button {
-    border-radius: 10rem;
-    padding-bottom: 10px;
-}
-
-.submit_tasks {
-    border-radius: 10rem;
-}
-
-.getteing_Task_form_user {
-    padding-bottom: 1rem;
-}
+        body {
+            background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+            font-family: 'Pangolin', cursive;
+            color: #fbd46d;
+            counter-reset: Count-Value;
+        }
+        
+        #main_titile {
+            display: grid;
+            justify-content: center;
+            color: #fbd46d;
+            align-content: center;
+            font-size: 10rem;
+        }
+        
+        .main-block-A {
+            padding-top: 10px;
+            display: grid;
+            grid-template-columns: auto auto;
+            border: 2px solid black;
+            border-radius: 10rem;
+            justify-content: center;
+            height: auto;
+            background-color: white;
+            column-gap: 10rem;
+        }
+        
+        .un-order_list_tasks {
+            list-style-type: circle;
+            height: auto;
+            width: 40rem;
+            border-radius: 20rem;
+            color: black;
+            font-size: 2rem;
+            padding-bottom: 2rem;
+        }
+        
+        #enterdolist {
+            background-color: black;
+            color: white;
+            font-size: 2rem;
+            border-radius: 20rem;
+        }
+        
+        #add_more_task_button {
+            border-radius: 10rem;
+            padding-bottom: 10px;
+        }
+        
+        .submit_tasks {
+            border-radius: 10rem;
+        }
+        
+        .getteing_Task_form_user {
+            padding-bottom: 1rem;
+        }
+        /* ------------------------------submitted task Style start here-------------------------------------------- */
+        
+        .submittied_task_today {
+            display: grid;
+            width: auto;
+            justify-content: center;
+        }
+        
+        .Container_block_B {
+            display: grid;
+            grid-template-rows: auto;
+            justify-content: center;
+            height: auto;
+            background-color: white width: auto;
+            border: 2px solid white;
+        }
+        
+        .container-task {
+            display: grid;
+            border-radius: 20rem;
+        }

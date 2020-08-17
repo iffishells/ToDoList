@@ -17,41 +17,54 @@
         </div>
     </div>
 
+    <form action="/submitted_task" method="post">
+        <div class="container-task">
+            <div class="title">
+                <center>
+                    <h1>Task manager</h1>
+                </center>
+            </div>
+            <div class="table-responsive-lg">
+                <table class="table table-hover ">
+                    <thead>
 
-    <div class="main-block-A">
-        <div class="Title_inside_block_A">
-            <h2>Add Tasks</h2>
+                        <tr>
+                            <th scope="col">No :</th>
+                            <th scope="col">Task</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (var i = 0; i < tasks.length; i++) { %>
+
+                            <tr>
+                                <td>
+                                    <%= i %>
+                                </td>
+                                <td>
+
+
+                                    <%= tasks[i] %>
+
+
+
+                                </td>
+                            </tr>
+                            <%  } %>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
+        <button type="submit" name="submit" formaction="/return" class="form-control btn-primary submit_tasks">Add more Task </button>
 
-        <div class="getteing_Task_form_user">
-
-            <form class="main-content" action="/todolist" method="post">
-
-                <ul class="un-order_list_tasks">
-                    <% for (var i = 0; i < newitem.length; i++) { %>
-                        <li id="inside__list">
-                            <%= newitem[i] %>
-                        </li>
-                        <%  } %>
-                </ul>
+    </form>
 
 
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="enterdolist" name="set_items" placeholder="Enter ToDoStep" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" id="add_more_task_button" name="add" value="submit_button" type="submit">+</button>
-                    </div>
-                </div>
-                <button type="submit" name="submit" formaction="/submit" class="form-control btn-primary submit_tasks">Submit</button>
+    <!-- 
 
-            </form>
-
-        </div>
-
-    </div>
-
-
-    <!-- <img id="image-plus-size" src="/images/plus.png" alt=""> -->
+    <div class="submittied_task_today">
+    <img id="image-plus-size" src="/images/plus.png" alt="">
 
 
 

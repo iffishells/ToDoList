@@ -2,6 +2,7 @@ const express = require('express');
 const BodyParser = require('body-parser');
 const ejs = require('ejs');
 const path = require('path');
+const { SlowBuffer } = require('buffer');
 const app = express();
 
 
@@ -94,9 +95,15 @@ app.post('/todolist', function(req, resp) {
 });
 
 app.post("/submit", function(req, resp) {
-    console.log("submit button");
+    resp.render("submitted_task", {
+        tasks: adding_task_list
+    })
+
 })
 
+app.post("/return", function(req, resp) {
+    resp.redirect("/todolist")
+})
 app.listen(3000, function(req, resp) {
     console.log("your server is listen at 3000 port")
 })
