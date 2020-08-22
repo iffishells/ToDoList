@@ -2,8 +2,35 @@ const express = require('express');
 const BodyParser = require('body-parser');
 const ejs = require('ejs');
 const path = require('path');
+const mysql = require("mysql");
 const { SlowBuffer } = require('buffer');
+const { createConnection } = require('net');
 const app = express();
+
+
+
+// DataBase Connection 
+
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'murti123' ///
+});
+
+connection.connect(function(err) {
+    if (err) {
+        console.error('error connecting: ' + err.stack);
+        return;
+    }
+
+    console.log('connected as id ' + connection.threadId);
+});
+
+
+
+
+
+
 
 
 // Varible defineds
@@ -27,7 +54,7 @@ app.use(BodyParser.urlencoded({ extended: true }));
 
 //for the ejs engine
 app.set('views', path.join(__dirname, "views"))
-app.set('view engine', 'ejs')
+    //  app.set('view engine', 'ejs')
 
 
 
@@ -104,6 +131,8 @@ app.post("/submit", function(req, resp) {
 app.post("/return", function(req, resp) {
     resp.redirect("/todolist")
 })
+
+
 app.listen(3000, function(req, resp) {
     console.log("your server is listen at 3000 port")
 })
