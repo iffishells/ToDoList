@@ -9,12 +9,13 @@ const app = express();
 
 
 
-// DataBase Connection 
+// DataBase Connection
 
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'murti123' ///
+    password: 'murti123',
+    database: "todolist"
 });
 
 connection.connect(function(err) {
@@ -54,7 +55,7 @@ app.use(BodyParser.urlencoded({ extended: true }));
 
 //for the ejs engine
 app.set('views', path.join(__dirname, "views"))
-    //  app.set('view engine', 'ejs')
+app.set('view engine', 'ejs')
 
 
 
@@ -88,16 +89,34 @@ app.get('/contact', function(req, res) {
 });
 
 
+// var sql = "INSERT INTO contacts (`FK_OWNERID`, `FK_USERID`, `FC_CONTACTNAME`)
+// VALUES(" + mysql.escape(userId) + ", " + mysql.escape(contactId) + ", " + mysql.escape(contactUsername) + "),
+//     (" + mysql.escape(contactId) + ", " + mysql.escape(userId) + ", " + mysql.escape(username) + ")
+// ";
+
 
 
 app.post("/contact", function(req, resp) {
-    const members = {
-        username: req.body.username,
+
+    members = {
+        name: req.body.username,
         email: req.body.email,
         password: req.body.password
     }
-    member_list.push(members)
-    resp.redirect("/")
+
+
+    var query = "INSERT INTO registered_person(FirstName , LastName ,email ,pass) VALUES( ? , ? , ? , ?)";
+    var object = [members.name, members.email, members.password];
+
+    var sqlstring = " INSERT INTO Password_member_of_todalist(  user_name, Emails, password) VALUES(  ? , ? , ?)";
+    connection.query(sqlstring, object,
+        function(error, results, fields) {
+            if (error) throw error;
+            // console.log("the solution is ", results[0].solution)
+        });
+
+    // member_list.push(members) m
+    resp.redirect("/contact")
 
 });
 
