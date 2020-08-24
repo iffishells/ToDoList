@@ -162,6 +162,12 @@ app.post("/return", function(req, resp) {
 })
 
 
-app.listen(3000, function(req, resp) {
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 3000;
+}
+
+
+app.listen(port, function(req, resp) {
     console.log("your server is listen at 3000 port")
 })

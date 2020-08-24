@@ -1,26 +1,30 @@
 {
-  "name": "todolist",
-  "version": "1.0.0",
-  "description": "The goal of this web application  is to help us become more aware of how we spend time in the process of doing those tasks and how productive that time is. It can help set some constraints on social media to reduce distraction and track the time we spend working on the todo items.",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iffishells/ToDoList.git"
-  },
-  "author": "iffishells",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/iffishells/ToDoList/issues"
-  },
-  "homepage": "https://github.com/iffishells/ToDoList#readme",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "ejs": "^3.1.3",
-    "express": "^4.17.1",
-    "mysql": "github:mysqljs/mysql",
-    "nodemon": "^2.0.4"
-  }
+    "name": "todolist",
+    "version": "1.0.0",
+    "description": "The goal of this web application  is to help us become more aware of how we spend time in the process of doing those tasks and how productive that time is. It can help set some constraints on social media to reduce distraction and track the time we spend working on the todo items.",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iffishells/ToDoList.git"
+    },
+    "author": "iffishells",
+    "license": "ISC",
+    "engines": {
+        "node": "v10.22.0"
+    },
+    "bugs": {
+        "url": "https://github.com/iffishells/ToDoList/issues"
+    },
+    "homepage": "https://github.com/iffishells/ToDoList#readme",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "ejs": "^3.1.3",
+        "express": "^4.17.1",
+        "mysql": "github:mysqljs/mysql",
+        "node": "^14.8.0",
+        "nodemon": "^2.0.4"
+    }
 }
