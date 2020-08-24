@@ -5,6 +5,7 @@ const path = require('path');
 const mysql = require("mysql");
 const { SlowBuffer } = require('buffer');
 const { createConnection } = require('net');
+const { query } = require('express');
 const app = express();
 
 
@@ -65,19 +66,25 @@ app.get('/', function(req, res) {
 
 
 app.post("/", function(req, resp) {
-    const UserName = req.body.email
-    const password = req.body.password
+    const UserEmail = req.body.email;
+    const UserPassword = req.body.password
 
-    for (let i = 0; i < member_list.length; i++) {
-        S
-        if (UserName === member_list[i].email && password === member_list[i].password) {
-            console.log("in checking password ... ....");
-            resp.redirect("/todolist")
 
-        } else {
-            resp.render("/")
-        }
-    }
+    connection.query('SELECT Emails , password FROM Password_member_of_todalist WHERE Emails  = ? and password = ? ', [UserEmail, UserPassword],
+        function(error, rows, fields) {
+
+            if (error) throw error;
+            console.log(rows[0].Emails);
+            // resp.send(rows[0].Emails)
+            if (rows[0].Emails === UserEmail && rows[0].password === UserPassword) {
+                console.log("you logged into todolist")
+                resp.redirect("/todolist")
+            } else {
+                resp.render("/")
+                console.log("sorry you cant be logged");
+            }
+        })
+
 
 
 });
@@ -87,12 +94,6 @@ app.post("/", function(req, resp) {
 app.get('/contact', function(req, res) {
     res.render("contact.ejs")
 });
-
-
-// var sql = "INSERT INTO contacts (`FK_OWNERID`, `FK_USERID`, `FC_CONTACTNAME`)
-// VALUES(" + mysql.escape(userId) + ", " + mysql.escape(contactId) + ", " + mysql.escape(contactUsername) + "),
-//     (" + mysql.escape(contactId) + ", " + mysql.escape(userId) + ", " + mysql.escape(username) + ")
-// ";
 
 
 
@@ -132,10 +133,19 @@ app.get('/todolist', function(req, res) {
 });
 
 app.post('/todolist', function(req, resp) {
-    // console.log("todolist post has been called")
-    adding_task_list.push(req.body.set_items)
+    console.log("todolist post has been called")
 
-    console.log(req.body);
+    // const tasksComing_Form_user = req.body.set_items
+    adding_task_list.push(req.body.set_items)
+        // var sqlString = "INSERT INTO Add_Taks (tasks) VALUES (?)"
+        // var taskObject = [tasksComing_Form_user]
+
+    // connection.query(sqlString, taskObject, function(error, rows, fields) {
+    //     if (error) throw error;
+    //     console.log(rows)
+    // })
+
+    console.log(adding_task_list);
     resp.redirect("/todolist")
 
 });
